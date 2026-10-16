@@ -1,0 +1,11 @@
+.git
+.env*
+.venv
+__pycache__
+results
+evidence
+__MACOSX
+.DS_Store
+._*
+.pytest_cache
+dist
