@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "python_files": 21,
+  "sql_statements": {
+    "01_bronze.sql": 8,
+    "02_silver.sql": 1,
+    "03_gold.sql": 1,
+    "04_reference_q3.sql": 1,
+    "05_validation.sql": 1,
+    "06_schema_evolution.sql": 7,
+    "07_time_travel.sql": 7,
+    "08_bi_queries.sql": 3
+  },
+  "services": [
+    "postgres",
+    "minio",
+    "minio-init",
+    "lakekeeper-migrate",
+    "lakekeeper",
+    "catalog-init",
+    "trino",
+    "superset-init",
+    "superset",
+    "runner"
+  ],
+  "limitation": "Syntax/configuration checks only; connector procedures require live Trino."
+}

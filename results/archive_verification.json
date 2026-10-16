@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "archive_contains_no_git_env_venv_macosx": true,
+  "checks": [
+    {
+      "command": "make env audit (without .git)",
+      "exit_code": 0,
+      "output": "python3 scripts/env.py\nCreated .env (0600); credentials are not printed\npython3 scripts/audit.py\nSubmission audit passed; benchmark files unchanged\n"
+    },
+    {
+      "command": "static checks in extracted source",
+      "exit_code": 0,
+      "output": "{\"python_files\": 21, \"sql_statements\": {\"01_bronze.sql\": 8, \"02_silver.sql\": 1, \"03_gold.sql\": 1, \"04_reference_q3.sql\": 1, \"05_validation.sql\": 1, \"06_schema_evolution.sql\": 7, \"07_time_travel.sql\": 7, \"08_bi_queries.sql\": 3}, \"status\": \"passed\"}\n'ALTER TABLE lakehouse.demo.snapshot_example EXECUTE rollback_to_snapshot(123456789)' contains unsupported syntax. Falling back to parsing as a 'Command'.\n"
+    },
+    {
+      "command": "make test in extracted source",
+      "exit_code": 0,
+      "output": "python3 -m unittest discover -s tests -v\ntest_incorrect_median_is_rejected (test_audit.SubmissionAuditTests.test_incorrect_median_is_rejected) ... ok\ntest_incorrect_percentage_is_rejected (test_audit.SubmissionAuditTests.test_incorrect_percentage_is_rejected) ... ok\ntest_private_paths_are_excluded_but_results_are_publishable (test_audit.SubmissionAuditTests.test_private_paths_are_excluded_but_results_are_publishable) ... ok\ntest_query_on_gold_cannot_pass_as_bronze_benchmark (test_audit.SubmissionAuditTests.test_query_on_gold_cannot_pass_as_bronze_benchmark) ... ok\ntest_saved_measurements_are_consistent (test_audit.SubmissionAuditTests.test_saved_measurements_are_consistent) ... ok\ntest_pages_are_fully_consumed (test_http_client.ProtocolTests.test_pages_are_fully_consumed) ... ok\ntest_below_boundary_rejected (test_validation.ValidationTests.test_below_boundary_rejected) ... ok\ntest_boundary_tie (test_validation.ValidationTests.test_boundary_tie) ... ok\ntest_changed_revenue_fails (test_validation.ValidationTests.test_changed_revenue_fails) ... ok\ntest_count_mismatch_fails (test_validation.ValidationTests.test_count_mismatch_fails) ... ok\ntest_duplicate_order_fails (test_validation.ValidationTests.test_duplicate_order_fails) ... ok\ntest_float_reduction_noise (test_validation.ValidationTests.test_float_reduction_noise) ... ok\ntest_nan_inf_fail (test_validation.ValidationTests.test_nan_inf_fail) ... ok\ntest_null_fails (test_validation.ValidationTests.test_null_fails) ... ok\ntest_tie_cannot_replace_higher_rank (test_validation.ValidationTests.test_tie_cannot_replace_higher_rank) ... ok\ntest_unordered_rows (test_validation.ValidationTests.test_unordered_rows) ... ok\ntest_wrong_date_fails (test_validation.ValidationTests.test_wrong_date_fails) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.552s\n\nOK\n"
+    }
+  ],
+  "verified_source_sha256": {
+    "scripts/package.py": "ff5afd3b4758ef25d528384dd54a979af70c7a9a8609248c0efbe2ad6a046c1c",
+    "scripts/bootstrap.py": "c1ccf6c32008b119851a1ba6262550f02653a813f868982fb8ffbe04684d36a2",
+    "scripts/env.py": "5b9e594c33f610803d514ad14a3f2968cee0ace97d3e0f2e2a95bfcea0b8d940",
+    "scripts/benchmark.py": "b5c8ddc7fa7afb7e42c8d9e294c70eb732ac042f103477ac177b4a4a8ab9f4a3",
+    "scripts/audit.py": "3892405fb6a9e0af7d3fda62013ae8d3bc6ba95607d82f0756322970785e71c7",
+    "scripts/static_check.py": "b5af89c7d321bf388b324f013dc39910fe0014b695eb75350fbde7193069eea8",
+    "scripts/smoke.sh": "e90bfe2e5605ec23cf700f28c7a420fe4a01150d747a3cdaccbcf7512ebe85b5",
+    "scripts/collect_metrics.py": "3f114905f02ffb15b417da104231a2542ee4ded86257d3dac2f5565623ce1de0",
+    "scripts/iceberg_demo.py": "bc6ad990b34643fae25dbf41c4d802f11aeb1479fe379358ab3b137a588381a9",
+    "scripts/validate.py": "af36474539ec8f6590a80bce200c2e0a24b52035c2a2ca3bb962dd0bcd84112f",
+    "scripts/bootstrap.sh": "3c25f2b4a0e195fe2b6020c30aeb706760cac8532614e3d34070e6dc417a763f",
+    "scripts/run_pipeline.py": "a3c97a9f8cb2b669bb379686aee995252d8b3ff886c1663bbeb3272e2c188b5c",
+    "scripts/common.py": "07221fcf201c0553fe1827c55682a8d66b081bd6148b1121e8a93c28fea0d81d",
+    "scripts/environment.py": "c034c3c91097cb658c73263b0defc919fc287f2942f78419da5e9ac7f722dcbb",
+    "scripts/render_report.py": "2858de8eb8a83141071f8d6caeb69a47781db2926756fe06a33b75791a0a50a4",
+    "scripts/check_bi.py": "e479160ad983e5005ae035a5358a980048a4a3a123330776d751025673bc6464",
+    "scripts/check_services.py": "baa034dbba02db895111f07bb41dcdd0c0de6fc4e283e9cc3ac5012b684eec02",
+    "scripts/smoke.py": "c47953d034fbd0353d68f6bddaa0f164e3d7e18459fc8149a1a0fb36b888d205",
+    "sql/03_gold.sql": "736dc64b36389492faefde69c0bdc435831548a94d7aaa3cdf1c0d3aab473508",
+    "sql/01_bronze.sql": "8fd87eaf3734ee17966b01769ca6969ab1ee0e10a833d6231ed30405d0491618",
+    "sql/02_silver.sql": "c43ca91d0f482d150ecfb44d08c58b0a04ce9d4afd236ade6a7ede9e05c27780",
+    "sql/08_bi_queries.sql": "87325a59cb0ec503d831f2720ef78cb9a2b9044d657ce4b079e97ab8a9eb3f61",
+    "sql/07_time_travel.sql": "c1de2ecc3f52cbf4cbeb90a72935e3041dec8ff5ca049a764ff286182ab8f7fc",
+    "sql/05_validation.sql": "02f220dd191bebd05633af9964140acf3b2245b4ac3d6a71ce949a284b020717",
+    "sql/06_schema_evolution.sql": "acc2ac74584463069682bcc7270625c9a4b40d994e65fa2a35406ba2288834ce",
+    "sql/04_reference_q3.sql": "b753ea728ab5ee0821a3d7e5048f4ec68f39c2f47c043313a6aa2953fdbfd381",
+    "docker/trino/node.properties": "b14cb5f27b1907bc583f03b88549cc9b9df5473b9b88df8661e57bf6f6166952",
+    "docker/trino/config.properties": "245100c472b168a7554383a67e16ca5a91cf5a1d18fd225869adbf32505bd39b",
+    "docker/trino/jvm.config": "0a44b64047a1482e008cfed8fcd7908adb806401bbf12ff5a612ad7d8d2b64e2",
+    "docker/minio/Dockerfile": "03731c5596ea6f5d7ba134bf665001184f6bc9c4118d0ee3b94b4c935a06ed11",
+    "docker/mc/Dockerfile": "f6f39a8d5919b97cbd538ca842cd9a6bae20064d88e42ddfab362341e47f0d13",
+    "docker/superset/register.py": "a76fecd1ba4e394532826ac1228066d3a124a51f3c7504b1982e583979697c74",
+    "docker/superset/Dockerfile": "f1dc437e531d2ea1f2a1d26a10d377e4d728aff1e826e7747001541489f15300",
+    "docker/superset/superset_config.py": "eb7ff9a89a499c575ee3f512fbff7587403dda353a9d32905a7790276a044fdf",
+    "docker/superset/init.sh": "72a09512166ff722603290d79cd087f40d5ca426a588602f3dbdde638f40ffe3",
+    "docker/superset/q3-chart.zip": "4f2435e9694b8df91e412d665915b1dc3b2cfab29eeacbcb17061fc0b6d882f7",
+    "docker/trino/catalog/tpch.properties": "6ecfcff8096487370b9e25741f361376ec71e9126966ba42299aaa5f8c28598d",
+    "docker/trino/catalog/lakehouse.properties": "84e11d033aea7766ee4d9e3751a0f735378388cd6b0ee4d64263b6828302f362",
+    "tests/test_validation.py": "2ef066f5220d91e5a5d997f02b058f3342a772089379495be85e7d786acad68b",
+    "tests/test_http_client.py": "d77ea21b1e45a2f6823a209e262e6cec61d4ca903982f8b7508a31b691b2bf62",
+    "tests/test_audit.py": "f0e4bfe26fb9c3a08b7eb2e5da2c5dc07a2993e37fd90b1e39b6f6c71c8bd9b8"
+  },
+  "note": "Archive extracted to a temporary directory; temporary credentials were generated locally and discarded. Docker volumes and original benchmark files were not changed."
+}

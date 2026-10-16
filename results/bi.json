@@ -1,0 +1,273 @@
+{
+  "status": "passed",
+  "run_id": "a2ee78d3-974a-4f3f-9f71-1512dd2785f0",
+  "database_id": 1,
+  "engine": "trino",
+  "sql_lab": [
+    {
+      "sql": "SELECT mktsegment, count(*) AS customers\nFROM lakehouse.bronze.customer GROUP BY mktsegment ORDER BY customers DESC",
+      "data": [
+        {
+          "mktsegment": "HOUSEHOLD",
+          "customers": 30189
+        },
+        {
+          "mktsegment": "BUILDING",
+          "customers": 30142
+        },
+        {
+          "mktsegment": "FURNITURE",
+          "customers": 29968
+        },
+        {
+          "mktsegment": "MACHINERY",
+          "customers": 29949
+        },
+        {
+          "mktsegment": "AUTOMOBILE",
+          "customers": 29752
+        }
+      ],
+      "query": {
+        "changed_on": "2026-10-16T19:16:05.848340",
+        "dbId": 1,
+        "db": "Lakehouse Trino",
+        "endDttm": 1792178165853.637,
+        "errorMessage": null,
+        "executedSql": "SELECT mktsegment, count(*) AS customers\nFROM lakehouse.bronze.customer GROUP BY mktsegment ORDER BY customers DESC\nLIMIT 1001",
+        "id": "dd03019497",
+        "queryId": 10,
+        "limit": 1000,
+        "limitingFactor": "NOT_LIMITED",
+        "progress": 100,
+        "rows": 5,
+        "catalog": "lakehouse",
+        "schema": "bronze",
+        "ctas": false,
+        "serverId": 10,
+        "sql": "SELECT mktsegment, count(*) AS customers\nFROM lakehouse.bronze.customer GROUP BY mktsegment ORDER BY customers DESC",
+        "sqlEditorId": null,
+        "startDttm": 1792178165718.828,
+        "state": "success",
+        "tab": null,
+        "tempSchema": null,
+        "tempTable": null,
+        "userId": 1,
+        "user": "Local Admin",
+        "resultsKey": null,
+        "trackingUrl": "http://trino:8080/ui/query.html?20261016_191605_00371_i7add",
+        "extra": {
+          "progress": null,
+          "cancel_query": "20261016_191605_00371_i7add",
+          "columns": [
+            {
+              "column_name": "mktsegment",
+              "name": "mktsegment",
+              "type": "VARCHAR",
+              "type_generic": 1,
+              "is_dttm": false
+            },
+            {
+              "column_name": "customers",
+              "name": "customers",
+              "type": "BIGINT",
+              "type_generic": 0,
+              "is_dttm": false
+            }
+          ]
+        }
+      },
+      "status": "success"
+    },
+    {
+      "sql": "SELECT count(*) AS orders FROM lakehouse.bronze.orders",
+      "data": [
+        {
+          "orders": 1500000
+        }
+      ],
+      "query": {
+        "changed_on": "2026-10-16T19:16:06.168503",
+        "dbId": 1,
+        "db": "Lakehouse Trino",
+        "endDttm": 1792178166172.135,
+        "errorMessage": null,
+        "executedSql": "SELECT count(*) AS orders FROM lakehouse.bronze.orders\nLIMIT 1001",
+        "id": "b999ef6443",
+        "queryId": 11,
+        "limit": 1000,
+        "limitingFactor": "NOT_LIMITED",
+        "progress": 100,
+        "rows": 1,
+        "catalog": "lakehouse",
+        "schema": "bronze",
+        "ctas": false,
+        "serverId": 11,
+        "sql": "SELECT count(*) AS orders FROM lakehouse.bronze.orders",
+        "sqlEditorId": null,
+        "startDttm": 1792178166040.129,
+        "state": "success",
+        "tab": null,
+        "tempSchema": null,
+        "tempTable": null,
+        "userId": 1,
+        "user": "Local Admin",
+        "resultsKey": null,
+        "trackingUrl": "http://trino:8080/ui/query.html?20261016_191606_00373_i7add",
+        "extra": {
+          "progress": null,
+          "cancel_query": "20261016_191606_00373_i7add",
+          "columns": [
+            {
+              "column_name": "orders",
+              "name": "orders",
+              "type": "BIGINT",
+              "type_generic": 0,
+              "is_dttm": false
+            }
+          ]
+        }
+      },
+      "status": "success"
+    },
+    {
+      "sql": "SELECT orderkey, revenue, orderdate, shippriority\nFROM lakehouse.gold.shipping_priority ORDER BY revenue DESC LIMIT 10",
+      "data": [
+        {
+          "orderkey": 2456423,
+          "revenue": 406181.0111,
+          "orderdate": "1995-03-05",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 3459808,
+          "revenue": 405838.69889999996,
+          "orderdate": "1995-03-04",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 492164,
+          "revenue": 390324.061,
+          "orderdate": "1995-02-19",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 1188320,
+          "revenue": 384537.9359,
+          "orderdate": "1995-03-09",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 2435712,
+          "revenue": 378673.05580000003,
+          "orderdate": "1995-02-26",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 4878020,
+          "revenue": 378376.7952,
+          "orderdate": "1995-03-12",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 5521732,
+          "revenue": 375153.9215,
+          "orderdate": "1995-03-13",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 2628192,
+          "revenue": 373133.30939999997,
+          "orderdate": "1995-02-22",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 993600,
+          "revenue": 371407.4595,
+          "orderdate": "1995-03-05",
+          "shippriority": 0
+        },
+        {
+          "orderkey": 2300070,
+          "revenue": 367371.1452000001,
+          "orderdate": "1995-03-13",
+          "shippriority": 0
+        }
+      ],
+      "query": {
+        "changed_on": "2026-10-16T19:16:06.455032",
+        "dbId": 1,
+        "db": "Lakehouse Trino",
+        "endDttm": 1792178166459.206,
+        "errorMessage": null,
+        "executedSql": "SELECT orderkey, revenue, orderdate, shippriority\nFROM lakehouse.gold.shipping_priority ORDER BY revenue DESC LIMIT 11",
+        "id": "9a658dcfa3",
+        "queryId": 12,
+        "limit": 10,
+        "limitingFactor": "NOT_LIMITED",
+        "progress": 100,
+        "rows": 10,
+        "catalog": "lakehouse",
+        "schema": "bronze",
+        "ctas": false,
+        "serverId": 12,
+        "sql": "SELECT orderkey, revenue, orderdate, shippriority\nFROM lakehouse.gold.shipping_priority ORDER BY revenue DESC LIMIT 10",
+        "sqlEditorId": null,
+        "startDttm": 1792178166319.269,
+        "state": "success",
+        "tab": null,
+        "tempSchema": null,
+        "tempTable": null,
+        "userId": 1,
+        "user": "Local Admin",
+        "resultsKey": null,
+        "trackingUrl": "http://trino:8080/ui/query.html?20261016_191606_00375_i7add",
+        "extra": {
+          "progress": null,
+          "cancel_query": "20261016_191606_00375_i7add",
+          "columns": [
+            {
+              "column_name": "orderkey",
+              "name": "orderkey",
+              "type": "BIGINT",
+              "type_generic": 0,
+              "is_dttm": false
+            },
+            {
+              "column_name": "revenue",
+              "name": "revenue",
+              "type": "DOUBLE",
+              "type_generic": 0,
+              "is_dttm": false
+            },
+            {
+              "column_name": "orderdate",
+              "name": "orderdate",
+              "type": "DATE",
+              "type_generic": 2,
+              "is_dttm": true
+            },
+            {
+              "column_name": "shippriority",
+              "name": "shippriority",
+              "type": "INTEGER",
+              "type_generic": 0,
+              "is_dttm": false
+            }
+          ]
+        }
+      },
+      "status": "success"
+    }
+  ],
+  "gold_chart": {
+    "id": 1,
+    "name": "TPC-H Q3 — Top 10 заказов по выручке",
+    "import_status": "passed",
+    "parameters_verified": true,
+    "x_axis": "orderkey",
+    "metric": "MAX(revenue)",
+    "sort": "descending",
+    "source_sql": "SELECT orderkey, revenue, orderdate, shippriority\nFROM lakehouse.gold.shipping_priority\nORDER BY revenue DESC LIMIT 10;"
+  }
+}

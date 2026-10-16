@@ -1,0 +1,1584 @@
+{
+  "run_id": "a2ee78d3-974a-4f3f-9f71-1512dd2785f0",
+  "scale": "sf1",
+  "completed_at": "2026-10-16T18:50:43.609353+00:00",
+  "quality": {
+    "customer_duplicate_keys": 0,
+    "customer_invalid": 0,
+    "segment_normalization_changes": 0,
+    "orders_invalid": 0,
+    "orders_orphans": 0,
+    "orders_duplicate_keys": 0,
+    "lineitem_invalid": 0,
+    "lineitem_orphans": 0
+  },
+  "queries": [
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.gold.shipping_priority",
+      "query_id": "20261016_185034_00052_i7add",
+      "wall_seconds": 0.1037516249998589,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 68,
+        "finishingTimeMillis": 54,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.silver.shipping_order_lines",
+      "query_id": "20261016_185034_00053_i7add",
+      "wall_seconds": 0.10224404199993842,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 66,
+        "finishingTimeMillis": 57,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.bronze.customer",
+      "query_id": "20261016_185034_00054_i7add",
+      "wall_seconds": 0.10458591700012221,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 67,
+        "finishingTimeMillis": 48,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.bronze.orders",
+      "query_id": "20261016_185035_00055_i7add",
+      "wall_seconds": 0.11356879200002368,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 74,
+        "finishingTimeMillis": 45,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.bronze.lineitem",
+      "query_id": "20261016_185035_00056_i7add",
+      "wall_seconds": 0.14198429099997156,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 2,
+        "elapsedTimeMillis": 94,
+        "finishingTimeMillis": 47,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.bronze.customer\nWITH (format='PARQUET', compression_codec='ZSTD') AS\nSELECT custkey, mktsegment FROM tpch.sf1.customer",
+      "query_id": "20261016_185035_00057_i7add",
+      "wall_seconds": 0.47427716700008204,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 19,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 19,
+        "planningTimeMillis": 47,
+        "analysisTimeMillis": 4,
+        "cpuTimeMillis": 535,
+        "wallTimeMillis": 790,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 432,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 150000,
+        "processedBytes": 3184685,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 238229,
+        "internalNetworkInputBytes": 3184685,
+        "peakMemoryBytes": 4140589,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 22,
+          "wallTimeMillis": 86,
+          "processedRows": 13,
+          "processedBytes": 34827,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 86,
+              "wallTimeMillis": 94,
+              "processedRows": 150000,
+              "processedBytes": 3149858,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 4,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 4,
+                  "cpuTimeMillis": 427,
+                  "wallTimeMillis": 610,
+                  "processedRows": 150000,
+                  "processedBytes": 0,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.bronze.orders\nWITH (format='PARQUET', compression_codec='ZSTD') AS\nSELECT orderkey, custkey, orderdate, shippriority FROM tpch.sf1.orders",
+      "query_id": "20261016_185035_00058_i7add",
+      "wall_seconds": 1.4081310000001395,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 19,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 19,
+        "planningTimeMillis": 18,
+        "analysisTimeMillis": 5,
+        "cpuTimeMillis": 2643,
+        "wallTimeMillis": 4744,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 1373,
+        "finishingTimeMillis": 31,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 1500000,
+        "processedBytes": 36091869,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 6993368,
+        "internalNetworkInputBytes": 36091869,
+        "peakMemoryBytes": 5454972,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 16,
+          "wallTimeMillis": 84,
+          "processedRows": 13,
+          "processedBytes": 87909,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 737,
+              "wallTimeMillis": 1240,
+              "processedRows": 1500000,
+              "processedBytes": 36003960,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 4,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 4,
+                  "cpuTimeMillis": 1890,
+                  "wallTimeMillis": 3420,
+                  "processedRows": 1500000,
+                  "processedBytes": 0,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.bronze.lineitem\nWITH (format='PARQUET', compression_codec='ZSTD') AS\nSELECT orderkey, extendedprice, discount, shipdate FROM tpch.sf1.lineitem",
+      "query_id": "20261016_185037_00059_i7add",
+      "wall_seconds": 1.8538722509999843,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 19,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 19,
+        "planningTimeMillis": 16,
+        "analysisTimeMillis": 3,
+        "cpuTimeMillis": 3483,
+        "wallTimeMillis": 6140,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 1818,
+        "finishingTimeMillis": 31,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 6001215,
+        "processedBytes": 168226198,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 40473781,
+        "internalNetworkInputBytes": 168226198,
+        "peakMemoryBytes": 40253022,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 13,
+          "wallTimeMillis": 70,
+          "processedRows": 14,
+          "processedBytes": 175434,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 1440,
+              "wallTimeMillis": 2250,
+              "processedRows": 6001215,
+              "processedBytes": 168050764,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 4,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 4,
+                  "cpuTimeMillis": 2030,
+                  "wallTimeMillis": 3820,
+                  "processedRows": 6001215,
+                  "processedBytes": 0,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT 'customer_duplicate_keys' AS check_name, count(*) AS violations\nFROM (SELECT custkey FROM lakehouse.bronze.customer GROUP BY custkey HAVING count(*) > 1)\nUNION ALL\nSELECT 'orders_duplicate_keys', count(*)\nFROM (SELECT orderkey FROM lakehouse.bronze.orders GROUP BY orderkey HAVING count(*) > 1)\nUNION ALL\nSELECT 'customer_invalid', count(*) FROM lakehouse.bronze.customer\nWHERE custkey IS NULL OR custkey <= 0 OR mktsegment IS NULL OR trim(mktsegment) = ''\nUNION ALL\nSELECT 'orders_invalid', count(*) FROM lakehouse.bronze.orders\nWHERE orderkey IS NULL OR orderkey <= 0 OR custkey IS NULL OR custkey <= 0\n OR orderdate IS NULL OR shippriority IS NULL OR shippriority < 0\nUNION ALL\nSELECT 'lineitem_invalid', count(*) FROM lakehouse.bronze.lineitem\nWHERE orderkey IS NULL OR orderkey <= 0 OR extendedprice IS NULL OR extendedprice < 0\n OR NOT is_finite(extendedprice) OR discount IS NULL OR discount < 0 OR discount > 1\n OR NOT is_finite(discount) OR shipdate IS NULL\nUNION ALL\nSELECT 'orders_orphans', count(*) FROM lakehouse.bronze.orders o\nLEFT JOIN lakehouse.bronze.customer c ON o.custkey = c.custkey WHERE c.custkey IS NULL\nUNION ALL\nSELECT 'lineitem_orphans', count(*) FROM lakehouse.bronze.lineitem l\nLEFT JOIN lakehouse.bronze.orders o ON l.orderkey = o.orderkey WHERE o.orderkey IS NULL\nUNION ALL\nSELECT 'segment_normalization_changes', count(*) FROM lakehouse.bronze.customer\nWHERE mktsegment <> upper(trim(mktsegment))",
+      "query_id": "20261016_185039_00060_i7add",
+      "wall_seconds": 0.7445775419998881,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 85,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 85,
+        "planningTimeMillis": 99,
+        "analysisTimeMillis": 17,
+        "cpuTimeMillis": 1103,
+        "wallTimeMillis": 2534,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 710,
+        "finishingTimeMillis": 33,
+        "physicalInputTimeMillis": 141,
+        "processedRows": 20252430,
+        "processedBytes": 97595888,
+        "physicalInputBytes": 57985635,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 39610253,
+        "peakMemoryBytes": 13089177,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 44,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 44,
+          "cpuTimeMillis": 6,
+          "wallTimeMillis": 7,
+          "processedRows": 16,
+          "processedBytes": 688,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 8,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 8,
+              "cpuTimeMillis": 20,
+              "wallTimeMillis": 134,
+              "processedRows": 150000,
+              "processedBytes": 2400162,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 14,
+                  "wallTimeMillis": 28,
+                  "processedRows": 150000,
+                  "processedBytes": 238229,
+                  "physicalInputBytes": 238229,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            },
+            {
+              "stageId": "3",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 8,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 8,
+              "cpuTimeMillis": 159,
+              "wallTimeMillis": 358,
+              "processedRows": 1500000,
+              "processedBytes": 24001458,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "4",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 105,
+                  "wallTimeMillis": 263,
+                  "processedRows": 1500000,
+                  "processedBytes": 1306720,
+                  "physicalInputBytes": 1306720,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            },
+            {
+              "stageId": "5",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 6,
+              "wallTimeMillis": 11,
+              "processedRows": 150000,
+              "processedBytes": 238229,
+              "physicalInputBytes": 238229,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            },
+            {
+              "stageId": "6",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 20,
+              "wallTimeMillis": 110,
+              "processedRows": 1500000,
+              "processedBytes": 7041945,
+              "physicalInputBytes": 7041945,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            },
+            {
+              "stageId": "7",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 2,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 2,
+              "cpuTimeMillis": 184,
+              "wallTimeMillis": 460,
+              "processedRows": 6001215,
+              "processedBytes": 40570877,
+              "physicalInputBytes": 40570877,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            },
+            {
+              "stageId": "8",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 6,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 6,
+              "cpuTimeMillis": 100,
+              "wallTimeMillis": 285,
+              "processedRows": 1650000,
+              "processedBytes": 4725030,
+              "physicalInputBytes": 3523945,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "9",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 3,
+                  "wallTimeMillis": 5,
+                  "processedRows": 150000,
+                  "processedBytes": 238229,
+                  "physicalInputBytes": 238229,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            },
+            {
+              "stageId": "10",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 459,
+              "wallTimeMillis": 834,
+              "processedRows": 7501215,
+              "processedBytes": 15289372,
+              "physicalInputBytes": 3282512,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "11",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 24,
+                  "wallTimeMillis": 33,
+                  "processedRows": 1500000,
+                  "processedBytes": 1306720,
+                  "physicalInputBytes": 1306720,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            },
+            {
+              "stageId": "12",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 3,
+              "wallTimeMillis": 6,
+              "processedRows": 150000,
+              "processedBytes": 238229,
+              "physicalInputBytes": 238229,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "check_name",
+          "type": "varchar(29)",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 29
+              }
+            ]
+          }
+        },
+        {
+          "name": "violations",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(custkey, mktsegment))) FROM tpch.sf1.customer",
+      "query_id": "20261016_185039_00061_i7add",
+      "wall_seconds": 0.16747600000007878,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 13,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 13,
+        "planningTimeMillis": 5,
+        "analysisTimeMillis": 1,
+        "cpuTimeMillis": 96,
+        "wallTimeMillis": 96,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 100,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 150000,
+        "processedBytes": 280,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 280,
+        "peakMemoryBytes": 400,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 4,
+          "processedBytes": 280,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 4,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 4,
+              "cpuTimeMillis": 95,
+              "wallTimeMillis": 95,
+              "processedRows": 150000,
+              "processedBytes": 0,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(custkey, mktsegment))) FROM lakehouse.bronze.customer",
+      "query_id": "20261016_185040_00062_i7add",
+      "wall_seconds": 0.1627797080000164,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 10,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 10,
+        "planningTimeMillis": 5,
+        "analysisTimeMillis": 6,
+        "cpuTimeMillis": 17,
+        "wallTimeMillis": 17,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 97,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 150000,
+        "processedBytes": 238299,
+        "physicalInputBytes": 238229,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 70,
+        "peakMemoryBytes": 628,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 1,
+          "processedBytes": 70,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 16,
+              "wallTimeMillis": 16,
+              "processedRows": 150000,
+              "processedBytes": 238229,
+              "physicalInputBytes": 238229,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(orderkey, custkey, orderdate, shippriority))) FROM tpch.sf1.orders",
+      "query_id": "20261016_185040_00063_i7add",
+      "wall_seconds": 0.38076025000009395,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 13,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 13,
+        "planningTimeMillis": 7,
+        "analysisTimeMillis": 1,
+        "cpuTimeMillis": 1111,
+        "wallTimeMillis": 1151,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 347,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 1500000,
+        "processedBytes": 280,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 280,
+        "peakMemoryBytes": 628,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 4,
+          "processedBytes": 280,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 4,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 4,
+              "cpuTimeMillis": 1110,
+              "wallTimeMillis": 1150,
+              "processedRows": 1500000,
+              "processedBytes": 0,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(orderkey, custkey, orderdate, shippriority))) FROM lakehouse.bronze.orders",
+      "query_id": "20261016_185040_00064_i7add",
+      "wall_seconds": 0.3929353749999791,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 10,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 10,
+        "planningTimeMillis": 8,
+        "analysisTimeMillis": 9,
+        "cpuTimeMillis": 267,
+        "wallTimeMillis": 285,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 356,
+        "finishingTimeMillis": 31,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 1500000,
+        "processedBytes": 7042015,
+        "physicalInputBytes": 7041945,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 70,
+        "peakMemoryBytes": 628,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 1,
+          "processedBytes": 70,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 266,
+              "wallTimeMillis": 284,
+              "processedRows": 1500000,
+              "processedBytes": 7041945,
+              "physicalInputBytes": 7041945,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(orderkey, extendedprice, discount, shipdate))) FROM tpch.sf1.lineitem",
+      "query_id": "20261016_185040_00065_i7add",
+      "wall_seconds": 0.7912496250000913,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 13,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 13,
+        "planningTimeMillis": 5,
+        "analysisTimeMillis": 1,
+        "cpuTimeMillis": 2571,
+        "wallTimeMillis": 2821,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 757,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 6001215,
+        "processedBytes": 280,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 280,
+        "peakMemoryBytes": 628,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 4,
+          "processedBytes": 280,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 4,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 4,
+              "cpuTimeMillis": 2570,
+              "wallTimeMillis": 2820,
+              "processedRows": 6001215,
+              "processedBytes": 0,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT count(*), to_hex(checksum(ROW(orderkey, extendedprice, discount, shipdate))) FROM lakehouse.bronze.lineitem",
+      "query_id": "20261016_185041_00066_i7add",
+      "wall_seconds": 0.8518631679999089,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 11,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 11,
+        "planningTimeMillis": 5,
+        "analysisTimeMillis": 6,
+        "cpuTimeMillis": 879,
+        "wallTimeMillis": 917,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 818,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 32,
+        "processedRows": 6001215,
+        "processedBytes": 40571017,
+        "physicalInputBytes": 40570877,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 140,
+        "peakMemoryBytes": 668,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 9,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 9,
+          "cpuTimeMillis": 1,
+          "wallTimeMillis": 1,
+          "processedRows": 2,
+          "processedBytes": 140,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 2,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 2,
+              "cpuTimeMillis": 878,
+              "wallTimeMillis": 916,
+              "processedRows": 6001215,
+              "processedBytes": 40570877,
+              "physicalInputBytes": 40570877,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "_col1",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.silver.shipping_order_lines\nWITH (format='PARQUET', compression_codec='ZSTD') AS\nSELECT l.orderkey, o.orderdate, o.shippriority, l.shipdate,\n       l.extendedprice, l.discount,\n       l.extendedprice * (1 - l.discount) AS line_revenue,\n       upper(trim(c.mktsegment)) AS mktsegment\nFROM lakehouse.bronze.customer c\nJOIN lakehouse.bronze.orders o ON c.custkey = o.custkey\nJOIN lakehouse.bronze.lineitem l ON l.orderkey = o.orderkey\nWHERE c.mktsegment = 'BUILDING'\n  AND o.orderdate < DATE '1995-03-15'\n  AND l.shipdate > DATE '1995-03-15'",
+      "query_id": "20261016_185042_00067_i7add",
+      "wall_seconds": 0.8000474589998703,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 32,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 32,
+        "planningTimeMillis": 72,
+        "analysisTimeMillis": 13,
+        "cpuTimeMillis": 416,
+        "wallTimeMillis": 544,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 765,
+        "finishingTimeMillis": 33,
+        "physicalInputTimeMillis": 116,
+        "processedRows": 7828483,
+        "processedBytes": 54906703,
+        "physicalInputBytes": 48157782,
+        "physicalWrittenBytes": 415947,
+        "internalNetworkInputBytes": 6748921,
+        "peakMemoryBytes": 18029823,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 17,
+          "wallTimeMillis": 78,
+          "processedRows": 13,
+          "processedBytes": 104751,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 52,
+              "wallTimeMillis": 59,
+              "processedRows": 30519,
+              "processedBytes": 1711832,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 10,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 10,
+                  "cpuTimeMillis": 299,
+                  "wallTimeMillis": 355,
+                  "processedRows": 6148341,
+                  "processedBytes": 45146877,
+                  "physicalInputBytes": 40581809,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": [
+                    {
+                      "stageId": "3",
+                      "state": "FINISHED",
+                      "done": true,
+                      "nodes": 1,
+                      "totalSplits": 6,
+                      "queuedSplits": 0,
+                      "runningSplits": 0,
+                      "completedSplits": 6,
+                      "cpuTimeMillis": 45,
+                      "wallTimeMillis": 49,
+                      "processedRows": 1530142,
+                      "processedBytes": 7705014,
+                      "physicalInputBytes": 7337744,
+                      "failedTasks": 0,
+                      "coordinatorOnly": false,
+                      "subStages": [
+                        {
+                          "stageId": "4",
+                          "state": "FINISHED",
+                          "done": true,
+                          "nodes": 1,
+                          "totalSplits": 1,
+                          "queuedSplits": 0,
+                          "runningSplits": 0,
+                          "completedSplits": 1,
+                          "cpuTimeMillis": 3,
+                          "wallTimeMillis": 3,
+                          "processedRows": 150000,
+                          "processedBytes": 238229,
+                          "physicalInputBytes": 238229,
+                          "failedTasks": 0,
+                          "coordinatorOnly": false,
+                          "subStages": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.gold.shipping_priority\nWITH (format='PARQUET', compression_codec='ZSTD') AS\nSELECT orderkey, sum(line_revenue) AS revenue, orderdate, shippriority\nFROM lakehouse.silver.shipping_order_lines\nGROUP BY orderkey, orderdate, shippriority\nORDER BY revenue DESC\nLIMIT 10",
+      "query_id": "20261016_185043_00068_i7add",
+      "wall_seconds": 0.21587829199984299,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 34,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 34,
+        "planningTimeMillis": 19,
+        "analysisTimeMillis": 9,
+        "cpuTimeMillis": 46,
+        "wallTimeMillis": 110,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 181,
+        "finishingTimeMillis": 33,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 30519,
+        "processedBytes": 698796,
+        "physicalInputBytes": 415947,
+        "physicalWrittenBytes": 846,
+        "internalNetworkInputBytes": 282849,
+        "peakMemoryBytes": 391160,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 9,
+          "wallTimeMillis": 70,
+          "processedRows": 13,
+          "processedBytes": 3219,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 4,
+              "wallTimeMillis": 6,
+              "processedRows": 10,
+              "processedBytes": 330,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 5,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 5,
+                  "cpuTimeMillis": 1,
+                  "wallTimeMillis": 1,
+                  "processedRows": 10,
+                  "processedBytes": 330,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": [
+                    {
+                      "stageId": "3",
+                      "state": "FINISHED",
+                      "done": true,
+                      "nodes": 1,
+                      "totalSplits": 13,
+                      "queuedSplits": 0,
+                      "runningSplits": 0,
+                      "completedSplits": 13,
+                      "cpuTimeMillis": 26,
+                      "wallTimeMillis": 26,
+                      "processedRows": 11620,
+                      "processedBytes": 278970,
+                      "physicalInputBytes": 0,
+                      "failedTasks": 0,
+                      "coordinatorOnly": false,
+                      "subStages": [
+                        {
+                          "stageId": "4",
+                          "state": "FINISHED",
+                          "done": true,
+                          "nodes": 1,
+                          "totalSplits": 1,
+                          "queuedSplits": 0,
+                          "runningSplits": 0,
+                          "completedSplits": 1,
+                          "cpuTimeMillis": 6,
+                          "wallTimeMillis": 7,
+                          "processedRows": 30519,
+                          "processedBytes": 415947,
+                          "physicalInputBytes": 415947,
+                          "failedTasks": 0,
+                          "coordinatorOnly": false,
+                          "subStages": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    }
+  ]
+}

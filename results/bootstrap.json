@@ -1,0 +1,564 @@
+{
+  "status": "passed",
+  "probe": {
+    "data_bytes": 223,
+    "file_count": 1,
+    "size_mib": 0.00021266937255859375,
+    "files": [
+      [
+        "s3://lakehouse/warehouse/01a1460c-d5b0-7c50-96e0-8a3499a9d671/storage_probe-0ceb09266f1446ae89db6ec3aaec1497/data/20261016_185936_00318_i7add-7bdace6f-a712-4b4c-99e3-3d58d15b49d0.parquet",
+        223,
+        "PARQUET"
+      ]
+    ]
+  },
+  "queries": [
+    {
+      "sql": "SELECT 1",
+      "query_id": "20261016_185935_00311_i7add",
+      "wall_seconds": 0.17494216699992649,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 1,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 1,
+        "planningTimeMillis": 1,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 97,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 116,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 1,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 1,
+          "cpuTimeMillis": 0,
+          "wallTimeMillis": 0,
+          "processedRows": 1,
+          "processedBytes": 0,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": []
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "integer",
+          "typeSignature": {
+            "rawType": "integer",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "CREATE SCHEMA IF NOT EXISTS lakehouse.bronze",
+      "query_id": "20261016_185935_00312_i7add",
+      "wall_seconds": 0.1017605420001928,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 68,
+        "finishingTimeMillis": 64,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE SCHEMA IF NOT EXISTS lakehouse.silver",
+      "query_id": "20261016_185935_00313_i7add",
+      "wall_seconds": 0.10433441700001822,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 68,
+        "finishingTimeMillis": 65,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE SCHEMA IF NOT EXISTS lakehouse.gold",
+      "query_id": "20261016_185935_00314_i7add",
+      "wall_seconds": 0.10434633299996676,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 69,
+        "finishingTimeMillis": 66,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE SCHEMA IF NOT EXISTS lakehouse.benchmark",
+      "query_id": "20261016_185935_00315_i7add",
+      "wall_seconds": 0.10792687499997555,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 69,
+        "finishingTimeMillis": 67,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE SCHEMA IF NOT EXISTS lakehouse.demo",
+      "query_id": "20261016_185935_00316_i7add",
+      "wall_seconds": 0.10648083299997779,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 70,
+        "finishingTimeMillis": 67,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "DROP TABLE IF EXISTS lakehouse.demo.storage_probe",
+      "query_id": "20261016_185936_00317_i7add",
+      "wall_seconds": 0.10342004199992516,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": false,
+        "nodes": 0,
+        "totalSplits": 0,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 0,
+        "planningTimeMillis": 0,
+        "analysisTimeMillis": 0,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 67,
+        "finishingTimeMillis": 53,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 0,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 0,
+        "peakMemoryBytes": 0,
+        "spilledBytes": 0
+      },
+      "columns": []
+    },
+    {
+      "sql": "CREATE TABLE lakehouse.demo.storage_probe WITH (format='PARQUET', compression_codec='ZSTD') AS SELECT CAST(42 AS bigint) AS value",
+      "query_id": "20261016_185936_00318_i7add",
+      "wall_seconds": 0.1830727090000437,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 16,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 16,
+        "planningTimeMillis": 30,
+        "analysisTimeMillis": 3,
+        "cpuTimeMillis": 11,
+        "wallTimeMillis": 77,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 147,
+        "finishingTimeMillis": 31,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 0,
+        "processedBytes": 1775,
+        "physicalInputBytes": 0,
+        "physicalWrittenBytes": 223,
+        "internalNetworkInputBytes": 1775,
+        "peakMemoryBytes": 1245,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 7,
+          "wallTimeMillis": 70,
+          "processedRows": 13,
+          "processedBytes": 1732,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": true,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 10,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 10,
+              "cpuTimeMillis": 4,
+              "wallTimeMillis": 7,
+              "processedRows": 1,
+              "processedBytes": 43,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 0,
+                  "wallTimeMillis": 0,
+                  "processedRows": 1,
+                  "processedBytes": 0,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "rows",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT sum(value) FROM lakehouse.demo.storage_probe",
+      "query_id": "20261016_185936_00319_i7add",
+      "wall_seconds": 0.16328220900004453,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 6,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 6,
+        "planningTimeMillis": 2,
+        "analysisTimeMillis": 4,
+        "cpuTimeMillis": 1,
+        "wallTimeMillis": 2,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 98,
+        "finishingTimeMillis": 32,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 1,
+        "processedBytes": 266,
+        "physicalInputBytes": 223,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 43,
+        "peakMemoryBytes": 346,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 5,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 5,
+          "cpuTimeMillis": 0,
+          "wallTimeMillis": 0,
+          "processedRows": 1,
+          "processedBytes": 43,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 1,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 1,
+              "cpuTimeMillis": 1,
+              "wallTimeMillis": 2,
+              "processedRows": 1,
+              "processedBytes": 223,
+              "physicalInputBytes": 223,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "_col0",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        }
+      ]
+    },
+    {
+      "sql": "SELECT file_path, file_size_in_bytes, file_format FROM lakehouse.demo.\"storage_probe$files\" WHERE content = 0 ORDER BY file_path",
+      "query_id": "20261016_185936_00320_i7add",
+      "wall_seconds": 0.16632387499998913,
+      "stats": {
+        "state": "FINISHED",
+        "queued": false,
+        "scheduled": true,
+        "progressPercentage": 100.0,
+        "runningPercentage": 0.0,
+        "nodes": 1,
+        "totalSplits": 7,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 7,
+        "planningTimeMillis": 6,
+        "analysisTimeMillis": 7,
+        "cpuTimeMillis": 2,
+        "wallTimeMillis": 2,
+        "queuedTimeMillis": 0,
+        "elapsedTimeMillis": 99,
+        "finishingTimeMillis": 31,
+        "physicalInputTimeMillis": 0,
+        "processedRows": 1,
+        "processedBytes": 7618,
+        "physicalInputBytes": 7022,
+        "physicalWrittenBytes": 0,
+        "internalNetworkInputBytes": 596,
+        "peakMemoryBytes": 832,
+        "spilledBytes": 0,
+        "rootStage": {
+          "stageId": "0",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 1,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 1,
+          "cpuTimeMillis": 0,
+          "wallTimeMillis": 0,
+          "processedRows": 1,
+          "processedBytes": 298,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "1",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 5,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 5,
+              "cpuTimeMillis": 0,
+              "wallTimeMillis": 0,
+              "processedRows": 1,
+              "processedBytes": 298,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "2",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 2,
+                  "wallTimeMillis": 2,
+                  "processedRows": 1,
+                  "processedBytes": 7022,
+                  "physicalInputBytes": 7022,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "columns": [
+        {
+          "name": "file_path",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        },
+        {
+          "name": "file_size_in_bytes",
+          "type": "bigint",
+          "typeSignature": {
+            "rawType": "bigint",
+            "arguments": []
+          }
+        },
+        {
+          "name": "file_format",
+          "type": "varchar",
+          "typeSignature": {
+            "rawType": "varchar",
+            "arguments": [
+              {
+                "kind": "LONG",
+                "value": 2147483647
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

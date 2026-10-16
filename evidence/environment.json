@@ -1,0 +1,12 @@
+{
+  "host_os": "Darwin",
+  "host_architecture": "arm64",
+  "host_python": "3.14.6",
+  "docker_engine": "29.5.3",
+  "docker_architecture": "aarch64",
+  "docker_memory_bytes": 8321515520,
+  "docker_cpus": 10,
+  "trino_heap": "3G",
+  "trino_query_memory": "1500MB",
+  "scale": "sf1"
+}

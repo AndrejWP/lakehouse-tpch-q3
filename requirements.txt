@@ -1,0 +1,4 @@
+# Runtime scripts use only the Python 3.12+ standard library.
+# Dependencies below are for offline syntax/configuration verification.
+PyYAML==6.0.3
+sqlglot==28.0.0

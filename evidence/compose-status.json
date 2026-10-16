@@ -1,0 +1,37 @@
+[
+  {
+    "Service": "lakekeeper",
+    "Image": "quay.io/lakekeeper/catalog:v0.9.5",
+    "State": "running",
+    "Health": "healthy",
+    "Status": "Up 26 minutes (healthy)"
+  },
+  {
+    "Service": "minio",
+    "Image": "lakehouse-minio:2025-10-15",
+    "State": "running",
+    "Health": "healthy",
+    "Status": "Up 16 minutes (healthy)"
+  },
+  {
+    "Service": "postgres",
+    "Image": "postgres:16.8-alpine",
+    "State": "running",
+    "Health": "healthy",
+    "Status": "Up 26 minutes (healthy)"
+  },
+  {
+    "Service": "superset",
+    "Image": "lakehouse-superset:4.1.2-trino",
+    "State": "running",
+    "Health": "healthy",
+    "Status": "Up 16 minutes (healthy)"
+  },
+  {
+    "Service": "trino",
+    "Image": "trinodb/trino:479",
+    "State": "running",
+    "Health": "healthy",
+    "Status": "Up 26 minutes (healthy)"
+  }
+]

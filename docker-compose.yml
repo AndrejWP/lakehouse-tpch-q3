@@ -1,0 +1,146 @@
+name: lakehouse-tpch-q3
+x-runner: &runner
+  image: python:3.12.9-slim
+  working_dir: /workspace
+  volumes:
+    - ./scripts:/workspace/scripts:ro
+    - ./sql:/workspace/sql:ro
+    - ./results:/workspace/results
+    - ./evidence:/workspace/evidence
+    - ./docker/superset:/workspace/docker/superset:ro
+  env_file: .env
+  environment:
+    TRINO_URL: http://trino:8080
+    LAKEKEEPER_URL: http://lakekeeper:8181
+    SUPERSET_URL: http://superset:8088
+services:
+  postgres:
+    image: postgres:16.8-alpine
+    environment:
+      POSTGRES_USER: lakekeeper
+      POSTGRES_DB: lakekeeper
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run make env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U lakekeeper -d lakekeeper']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    mem_limit: 768m
+  minio:
+    build: ./docker/minio
+    image: lakehouse-minio:2025-10-15
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?run make env}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?run make env}
+    ports:
+      - 127.0.0.1:9000:9000
+      - 127.0.0.1:9001:9001
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: [CMD, curl, -f, http://localhost:9000/minio/health/live]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    mem_limit: 1g
+  minio-init:
+    build: ./docker/mc
+    image: lakehouse-mc:2025-04-16
+    depends_on:
+      minio: {condition: service_healthy}
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    entrypoint: [/bin/sh, -ec]
+    command:
+      - 'mc alias set local http://minio:9000 "$$MINIO_ROOT_USER" "$$MINIO_ROOT_PASSWORD" >/dev/null; mc mb --ignore-existing local/lakehouse'
+  lakekeeper-migrate:
+    image: quay.io/lakekeeper/catalog:v0.9.5
+    command: [migrate]
+    environment: &lakekeeper_env
+      LAKEKEEPER__PG_DATABASE_URL_READ: postgresql://lakekeeper:${POSTGRES_PASSWORD}@postgres:5432/lakekeeper
+      LAKEKEEPER__PG_DATABASE_URL_WRITE: postgresql://lakekeeper:${POSTGRES_PASSWORD}@postgres:5432/lakekeeper
+      LAKEKEEPER__PG_ENCRYPTION_KEY: ${LAKEKEEPER_ENCRYPTION_KEY:?run make env}
+      LAKEKEEPER__BASE_URI: http://lakekeeper:8181
+      RUST_LOG: info
+    depends_on:
+      postgres: {condition: service_healthy}
+    mem_limit: 512m
+  lakekeeper:
+    image: quay.io/lakekeeper/catalog:v0.9.5
+    command: [serve]
+    environment: *lakekeeper_env
+    depends_on:
+      lakekeeper-migrate: {condition: service_completed_successfully}
+      minio-init: {condition: service_completed_successfully}
+    ports: [127.0.0.1:8181:8181]
+    healthcheck:
+      test: [CMD, /home/nonroot/lakekeeper, healthcheck]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+    mem_limit: 1g
+  catalog-init:
+    <<: *runner
+    command: [python, scripts/bootstrap.py, --catalog-only]
+    depends_on:
+      lakekeeper: {condition: service_healthy}
+  trino:
+    image: trinodb/trino:479
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports: [127.0.0.1:8080:8080]
+    volumes:
+      - ./docker/trino:/etc/trino:ro
+    depends_on:
+      catalog-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, curl, -fsS, http://localhost:8080/v1/info]
+      interval: 10s
+      timeout: 5s
+      retries: 36
+      start_period: 30s
+    mem_limit: 5g
+    cpus: 4
+  superset-init:
+    build: ./docker/superset
+    image: lakehouse-superset:4.1.2-trino
+    env_file: .env
+    environment: &superset_env
+      SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+    volumes: &superset_volumes
+      - superset_data:/app/superset_home
+      - ./docker/superset:/app/pythonpath:ro
+    command: [/bin/sh, /app/pythonpath/init.sh]
+    depends_on:
+      trino: {condition: service_healthy}
+    mem_limit: 2g
+  superset:
+    build: ./docker/superset
+    image: lakehouse-superset:4.1.2-trino
+    env_file: .env
+    environment: *superset_env
+    volumes: *superset_volumes
+    command: [gunicorn, --bind, '0.0.0.0:8088', --workers, '2', --timeout, '300', 'superset.app:create_app()']
+    depends_on:
+      superset-init: {condition: service_completed_successfully}
+    ports: [127.0.0.1:8088:8088]
+    healthcheck:
+      test: [CMD, curl, -fsS, http://localhost:8088/health]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    mem_limit: 2g
+  runner:
+    <<: *runner
+    profiles: [tools]
+    depends_on:
+      trino: {condition: service_healthy}
+volumes:
+  postgres_data:
+  minio_data:
+  superset_data:
